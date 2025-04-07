@@ -41,7 +41,7 @@ def _create_IQA_table():
     connection = pg_hook.get_conn()
     cursor = connection.cursor()
 
-    #cursor.execute("DROP TABLE IF EXISTS IQA;");
+    #cursor.execute("DROP TABLE IF EXISTS XXX;");
 
     sql = """
         CREATE TABLE IF NOT EXISTS IQA (
@@ -93,7 +93,7 @@ default_args = {
 with DAG(
     "Cap_Get_AQI_DAG",
     default_args=default_args,
-    schedule=None,
+    schedule="0 */2 * * *",
     start_date=timezone.datetime(2025, 3, 1),
     catchup=False,
     tags=["CapS"],
