@@ -93,8 +93,8 @@ default_args = {
 with DAG(
     "Cap_Get_AQI_DAG",
     default_args=default_args,
-    schedule="0 */2 * * *",
-    start_date=timezone.datetime(2025, 3, 1),
+    schedule="@hourly",
+    start_date=timezone.datetime(2025, 2, 1),
     catchup=False,
     tags=["CapS"],
 ):
